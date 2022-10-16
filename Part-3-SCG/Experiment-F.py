@@ -236,7 +236,7 @@ for jj, T in enumerate(T_list):
             
             equilibrium_gap = compute_gap(c, f, demand)
         
-        if torch.norm(grad) ** 2 < 1e-4 and equilibrium_gap < 1e-8:
+        if torch.norm(grad[enh > 0]) ** 2 < 1e-4 and equilibrium_gap < 1e-8:
             break
              
         with torch.no_grad():
